@@ -37,4 +37,8 @@ Rails.application.configure do
 
   # Devise config
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  # Assets
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 end
