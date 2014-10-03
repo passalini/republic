@@ -10,10 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require font-awesome
- *= require ionicons
- *= require AdminLTE
+ *= require bootflat
  *= require_tree .
  *= require_self
 */
+
+@import "bootstrap-sprockets";
+@import "bootflat";
+
+body {
+  background-color: #f9f9f9;
+}
+
+body > .container {
+  padding-top: 50px;
+  background-color: white;
+}

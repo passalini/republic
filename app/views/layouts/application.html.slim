@@ -6,39 +6,20 @@ html
       = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
       = javascript_include_tag 'application', 'data-turbolinks-track' => true
       = csrf_meta_tags
-  body.skin-blue
+  body
     /! Header begin
     = render 'layouts/top_navbar'
     /! /.header
 
-    .wrapper.row-offcanvas.row-offcanvas-left
-      /! Left side column. contains the logo and sidebar
-      aside.left-side.sidebar-offcanvas
-        /! sidebar: style can be found in sidebar.less
-        = render 'layouts/sidebar'
-        /! /.sidebar
+    .container
+      /! Alerts begin
+      = flash_notifications
+      /! /.alerts
 
-      /! Right side column. Contains the navbar and content of the page
-      aside.right-side
-        /! Content Header (Page header)
-        section.content-header
-          h1
-            | Dashboard
-            small Control panel
-          ol.breadcrumb
-            li
-              a href="#"
-                i.fa.fa-dashboard
-                | Home
-            li.active Dashboard
+      = yield
 
-        /! Main content
-        section.content
-          /! Alerts begin
-          = flash_notifications
-          /! /.alerts
+      hr
+        footer
+          p © Company 2014
+    /! /container
 
-          = yield
-        /! /.content
-      /! /.right-side
-    /! ./wrapper

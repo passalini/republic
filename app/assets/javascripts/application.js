@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require AdminLTE/app
-//= require AdminLTE/dashboard
+//= require icheck.min
+//= require bootflat_icheck
 //= require_tree .
