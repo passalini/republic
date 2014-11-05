@@ -23,6 +23,18 @@ body {
 }
 
 body > .container {
-  padding-top: 50px;
+  padding-top: 70px;
   background-color: white;
+}
+
+.app-month {
+  @extend .col-md-4;
+}
+
+.app-month .alert {
+  height: 120px;
+}
+
+.panel-body-gray {
+  background-color: #f9f9f9;
 }

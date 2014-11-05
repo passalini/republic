@@ -1,19 +1,58 @@
 .row
-  .col-md-4
+  .app-month data-target="#month-modal" data-toggle="modal"
     .alert.alert-danger
         h4 Pending
 
-  .col-md-4
-    .alert.alert-info
-        h4 Outubro
-        p R$ 235,00
-
-  .col-md-4
+  .app-month data-target="#month-modal" data-toggle="modal"
     .alert.alert-success
-      h4 Setembro
+      h4 September
       p R$ 301,00
 
-  .col-md-4
+  .app-month data-target="#month-modal" data-toggle="modal"
     .alert.alert-warning
-      h4 Agosto
+      h4 August
       p R$ 301,00
+
+/! Month Modal
+#month-modal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+          span.sr-only Close
+        h4#myModalLabel.modal-title
+          | October
+          select#month.form-control.hide
+            option October
+            option September
+            option August
+
+      .modal-body
+        .panel.panel-info
+          .panel-heading
+            h3.panel-title Bills
+          .panel-body.panel-body-gray
+            .panel
+              ul#myTab1.nav.nav-tabs.nav-justified
+                li.active
+                  a data-toggle="tab" href="#new-bill"
+                    | New Bill
+                li
+                  a
+                    span class="glyphicon glyphicon-plus"
+
+              #myTabContent.tab-content
+                #new-bill.tab-pane.fade.active.in
+                  .form-group
+                    label.control-label for="bill-name"  Name
+                    input#bill-name.form-control type="text" /
+
+                    label.control-label for="bill-value"  Value
+                    .input-group
+                      span.input-group-addon R$
+                      input#bill-value.form-control type="text" /
+
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button"  Close
+        button.btn.btn-primary type="button"  Save changes
