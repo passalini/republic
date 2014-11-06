@@ -1,35 +1,31 @@
 .row
-  .app-month data-target="#month-modal" data-toggle="modal"
+  .republic-month data-target="#republic-month-modal" data-toggle="modal"
     .alert.alert-danger
         h4 Pending
 
-  .app-month data-target="#month-modal" data-toggle="modal"
+  .republic-month data-target="#republic-month-modal" data-toggle="modal"
     .alert.alert-success
       h4 September
       p R$ 301,00
 
-  .app-month data-target="#month-modal" data-toggle="modal"
+  .republic-month data-target="#republic-month-modal" data-toggle="modal"
     .alert.alert-warning
       h4 August
       p R$ 301,00
 
 /! Month Modal
-#month-modal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+#republic-month-modal.modal.fade role="dialog" tabindex="-1"
   .modal-dialog
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"
-          span aria-hidden="true"  &times;
+          span &times;
           span.sr-only Close
-        h4#myModalLabel.modal-title
+        h4.modal-title
           | October
-          select#month.form-control.hide
-            option October
-            option September
-            option August
 
       .modal-body
-        .panel.panel-info
+        #bills.panel.panel-info
           .panel-heading
             h3.panel-title Bills
           .panel-body.panel-body-gray
@@ -52,6 +48,11 @@
                     .input-group
                       span.input-group-addon R$
                       input#bill-value.form-control type="text" /
+        #observations.panel-info
+          .panel-heading
+            h3.panel-title Observations
+          .panel-body.panel-body-gray
+            textarea.form-control rows="3"
 
       .modal-footer
         button.btn.btn-default data-dismiss="modal" type="button"  Close
