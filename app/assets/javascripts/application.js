@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require icheck.min
 //= require bootflat_icheck
+//= require angular
 //= require_tree .

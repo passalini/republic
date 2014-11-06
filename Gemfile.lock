@@ -1,22 +1,3 @@
-GIT
-  remote: git://github.com/zakelfassi/Bootflat-Rails.git
-  revision: f96048106f997078385901e6a9b57147af6faa32
-  specs:
-    bootflat-rails (0.1.11)
-      bootstrap-sass (~> 3.1)
-      jquery-rails (~> 3.1)
-      sass (~> 3.3)
-
-GIT
-  remote: git://github.com/zakelfassi/sass-rails.git
-  revision: 0d4013878dd18440c98da4ffa62208e7700f2477
-  specs:
-    sass-rails (4.0.2)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.3.4)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    angularjs-rails (1.3.0)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     bcrypt (3.1.7)
@@ -55,6 +37,10 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootflat-rails (0.1.11)
+      bootstrap-sass (~> 3.1)
+      jquery-rails (~> 3.1)
+      sass (~> 3.3)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
@@ -148,6 +134,10 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.1)
     sass (3.3.14)
+    sass-rails (4.0.1)
+      railties (>= 4.0.0, < 5.0)
+      sass (>= 3.1.10)
+      sprockets-rails (~> 2.0.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -200,10 +190,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   awesome_print (~> 1.2.0)
   better_errors
   binding_of_caller
-  bootflat-rails!
+  bootflat-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
@@ -215,7 +206,7 @@ DEPENDENCIES
   pry-rescue
   rails (= 4.1.4)
   rspec-rails
-  sass-rails!
+  sass-rails
   sdoc (~> 0.4.0)
   shoulda-matchers
   slim-rails

@@ -14,8 +14,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'slim-rails'
 
 gem 'bootstrap-sass' # Use Bootstrap to display Glyphicons correctly
-gem 'sass-rails', github: 'zakelfassi/sass-rails' # Use SCSS for stylesheets
-gem 'bootflat-rails', github: 'zakelfassi/Bootflat-Rails' # Use BootFlat for Front-end Flat UI based on Bootstrap
+gem 'sass-rails'#, github: 'zakelfassi/sass-rails' # Use SCSS for stylesheets
+gem 'bootflat-rails'#, github: 'zakelfassi/Bootflat-Rails' # Use BootFlat for Front-end Flat UI based on Bootstrap
+gem 'angularjs-rails'
 
 group :development do
   gem 'better_errors'
