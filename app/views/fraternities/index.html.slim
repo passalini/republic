@@ -1,25 +1,25 @@
-.row ng-controller="billsController"
-  #bills.panel.panel-info.col-md-4 ng-repeat="group in groups"
+.row
+  #bills.panel.panel-info.col-md-4
     .panel-heading
       h3.panel-title
-        | {{ group.month }}
+        | Month
     .panel-body.panel-body-gray
       .form-group
         label.control-label for="bill-name"  Name
-        input#bill-name.form-control type="text" ng-model="group.month"
+        input#bill-name.form-control type="text"
 
         label.control-label for="bill-value"  Value
         .input-group
           span.input-group-addon R$
-          input#bill-value.form-control type="text" ng-model="group.value"
+          input#bill-value.form-control type="text"
       #observations.panel-info
         .panel-heading
           h3.panel-title Observations
         .panel-body.panel-body-gray
-          textarea.form-control rows="3" ng-model="group.observations"
-      button.btn.btn-success type="button" ng-click="save(group)"
+          textarea.form-control rows="3"
+      button.btn.btn-success type="button"
         | Save
-      button.btn.btn-warning type="button" ng-click="delete(group)"
+      button.btn.btn-warning type="button"
         | Destroy
   button.btn.btn-info.btn-block type="button" data-target="#republic-month-modal" data-toggle="modal"
     | New
@@ -33,24 +33,24 @@
             span &times;
             span.sr-only Close
           h4.modal-title
-            | {{ newGroup.month || 'New' }}
+            | New
 
         .modal-body
           #bills.panel.panel-info
             .form-group
               label.control-label for="bill-name"  Name
-              input#bill-name.form-control type="text" ng-model="newGroup.month"
+              input#bill-name.form-control type="text"
 
               label.control-label for="bill-value"  Value
               .input-group
                 span.input-group-addon R$
-                input#bill-value.form-control type="text" ng-model="newGroup.value"
+                input#bill-value.form-control type="text"
             #observations.panel-info
               .panel-heading
                 h3.panel-title Observations
               .panel-body.panel-body-gray
-                textarea.form-control rows="3" ng-model="newGroup.observations"
+                textarea.form-control rows="3"
         .modal-footer
           button.btn.btn-default data-dismiss="modal" type="button"  Close
-          button.btn.btn-primary type="button" ng-click="create(newGroup)"
+          button.btn.btn-primary type="button"
             | Save changes
