@@ -1,59 +1,56 @@
-.row
-  .republic-month data-target="#republic-month-modal" data-toggle="modal"
-    .alert.alert-danger
-        h4 Pending
+.row ng-controller="billsController"
+  #bills.panel.panel-info.col-md-4 ng-repeat="group in groups"
+    .panel-heading
+      h3.panel-title
+        | {{ group.month }}
+    .panel-body.panel-body-gray
+      .form-group
+        label.control-label for="bill-name"  Name
+        input#bill-name.form-control type="text" ng-model="group.month"
 
-  .republic-month data-target="#republic-month-modal" data-toggle="modal"
-    .alert.alert-success
-      h4 September
-      p R$ 301,00
+        label.control-label for="bill-value"  Value
+        .input-group
+          span.input-group-addon R$
+          input#bill-value.form-control type="text" ng-model="group.value"
+      #observations.panel-info
+        .panel-heading
+          h3.panel-title Observations
+        .panel-body.panel-body-gray
+          textarea.form-control rows="3" ng-model="group.observations"
+      button.btn.btn-success type="button" ng-click="save(group)"
+        | Save
+      button.btn.btn-warning type="button" ng-click="delete(group)"
+        | Destroy
+  button.btn.btn-info.btn-block type="button" data-target="#republic-month-modal" data-toggle="modal"
+    | New
 
-  .republic-month data-target="#republic-month-modal" data-toggle="modal"
-    .alert.alert-warning
-      h4 August
-      p R$ 301,00
+  /! Month Modal
+  #republic-month-modal.modal.fade role="dialog" tabindex="-1"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" type="button"
+            span &times;
+            span.sr-only Close
+          h4.modal-title
+            | {{ newGroup.month || 'New' }}
 
-/! Month Modal
-#republic-month-modal.modal.fade role="dialog" tabindex="-1"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close data-dismiss="modal" type="button"
-          span &times;
-          span.sr-only Close
-        h4.modal-title
-          | October
+        .modal-body
+          #bills.panel.panel-info
+            .form-group
+              label.control-label for="bill-name"  Name
+              input#bill-name.form-control type="text" ng-model="newGroup.month"
 
-      .modal-body
-        #bills.panel.panel-info
-          .panel-heading
-            h3.panel-title Bills
-          .panel-body.panel-body-gray
-            .panel
-              ul#myTab1.nav.nav-tabs.nav-justified
-                li.active
-                  a data-toggle="tab" href="#new-bill"
-                    | New Bill
-                li
-                  a
-                    span class="glyphicon glyphicon-plus"
-
-              #myTabContent.tab-content
-                #new-bill.tab-pane.fade.active.in
-                  .form-group
-                    label.control-label for="bill-name"  Name
-                    input#bill-name.form-control type="text" /
-
-                    label.control-label for="bill-value"  Value
-                    .input-group
-                      span.input-group-addon R$
-                      input#bill-value.form-control type="text" /
-        #observations.panel-info
-          .panel-heading
-            h3.panel-title Observations
-          .panel-body.panel-body-gray
-            textarea.form-control rows="3"
-
-      .modal-footer
-        button.btn.btn-default data-dismiss="modal" type="button"  Close
-        button.btn.btn-primary type="button"  Save changes
+              label.control-label for="bill-value"  Value
+              .input-group
+                span.input-group-addon R$
+                input#bill-value.form-control type="text" ng-model="newGroup.value"
+            #observations.panel-info
+              .panel-heading
+                h3.panel-title Observations
+              .panel-body.panel-body-gray
+                textarea.form-control rows="3" ng-model="newGroup.observations"
+        .modal-footer
+          button.btn.btn-default data-dismiss="modal" type="button"  Close
+          button.btn.btn-primary type="button" ng-click="create(newGroup)"
+            | Save changes

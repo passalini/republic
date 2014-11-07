@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require icheck.min
 //= require bootflat_icheck
 //= require angular
+//= require lodash
 //= require_tree .
